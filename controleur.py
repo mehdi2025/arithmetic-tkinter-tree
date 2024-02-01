@@ -1,9 +1,9 @@
 from modele import Expression, Constante, Variable, Terme
 
 class Controleur:
-    def __init__(self, vue):
-        self.vue = vue
-        self.expression = None
+    def __init__(self, model):
+            self.model = model
+    
 
     def dessiner_cercle(self, x, y, operateur):
         self.expression = Terme(operateur, Constante(x), Constante(y))
@@ -33,7 +33,7 @@ class Controleur:
             self.vue.afficher_resultat("Opérande droit défini avec succès.")
 
 
-    def calculer_expression(self):
-        if self.expression is not None:
-            resultat = self.expression.evaluer()
-            self.vue.afficher_resultat("Résultat : " + str(resultat))
+          
+
+    def effectuer_calcul(self, nombre1, nombre2,operateur):
+        return self.model.effectuer_calcul(nombre1, nombre2,operateur)
